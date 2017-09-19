@@ -54,6 +54,7 @@ public class EstadoDAO {
           
             pst.setString(1, estado.getNome());
             pst.setString(2, estado.getSigla());
+            pst.setInt(3, estado.getId());
             
             if(pst.executeUpdate()>0)
             {

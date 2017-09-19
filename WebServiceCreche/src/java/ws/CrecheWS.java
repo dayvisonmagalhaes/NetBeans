@@ -77,6 +77,17 @@ public class CrecheWS {
             return "false";
         }
     }
+    
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("Estado/atualizar")
+    public boolean atualizarEstado(String content) {
+        Gson g = new Gson();
+        /*Os dados do json precisam ser iguais aos das classes do Java */
+        Estado estado = (Estado) g.fromJson(content, Estado.class);
+        EstadoDAO edao = new EstadoDAO();
+        return edao.atualizar(estado);
+    }
 
     /**
      * PUT method for updating or creating an instance of CrecheWS
