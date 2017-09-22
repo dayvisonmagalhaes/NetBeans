@@ -9,19 +9,19 @@ package modelo;
  *
  * @author u6390869
  */
-public class Bairro {
+public class TipoTurma {
     
     private int id;
     private String nome;
-    private int cidadeId;
+    private String descricao;
 
-    public Bairro() {
+    public TipoTurma() {
     }
 
-    public Bairro(int id, String nome, int cidadeId) {
+    public TipoTurma(int id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
-        this.cidadeId = cidadeId;
+        this.descricao = descricao;
     }
 
     public int getId() {
@@ -40,16 +40,13 @@ public class Bairro {
         this.nome = nome;
     }
 
-    public int getCidadeId() {
-        return cidadeId;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setCidadeId(int cidadeId) {
-        this.cidadeId = cidadeId;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
-
-    
-    
     
     
 }

@@ -12,20 +12,20 @@ package modelo;
 public class Turma {
     
     private int id;
-    private String descricao;
     private String sala;
     private String turno;
-    private int escolaCnpj;
+    private double escolaCnpj;
+    private int tipoTurmaId;
 
     public Turma() {
     }
 
-    public Turma(int id, String descricao, String sala, String turno, int escolaCnpj) {
+    public Turma(int id, String sala, String turno, double escolaCnpj, int tipoTurmaId) {
         this.id = id;
-        this.descricao = descricao;
         this.sala = sala;
         this.turno = turno;
         this.escolaCnpj = escolaCnpj;
+        this.tipoTurmaId = tipoTurmaId;
     }
 
     public int getId() {
@@ -34,14 +34,6 @@ public class Turma {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public String getSala() {
@@ -60,13 +52,22 @@ public class Turma {
         this.turno = turno;
     }
 
-    public int getEscolaCnpj() {
+    public double getEscolaCnpj() {
         return escolaCnpj;
     }
 
-    public void setEscolaCnpj(int escolaCnpj) {
+    public void setEscolaCnpj(double escolaCnpj) {
         this.escolaCnpj = escolaCnpj;
     }
-    
+
+    public int getTipoTurmaId() {
+        return tipoTurmaId;
+    }
+
+    public void setTipoTurmaId(int tipoTurmaId) {
+        this.tipoTurmaId = tipoTurmaId;
+    }
+
+   
     
 }

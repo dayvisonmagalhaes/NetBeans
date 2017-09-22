@@ -6,6 +6,7 @@
 package ws;
 
 import com.google.gson.Gson;
+import dao.BairroDAO;
 import dao.EstadoDAO;
 import java.util.List;
 import javax.ws.rs.core.Context;
@@ -18,6 +19,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
+import modelo.Bairro;
 import modelo.Estado;
 
 /**
@@ -89,15 +91,15 @@ public class CrecheWS {
         return edao.atualizar(estado);
     }
 
-    /**
-     * PUT method for updating or creating an instance of CrecheWS
-     *
-     * @param content representation for the resource
-     * @return an HTTP response with content of the updated or created resource.
-     */
-    @PUT
+    /*
+    @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content
-    ) {
+    @Path("Bairro/inserir")
+    public boolean inserirBairro(String content) {
+        Gson g = new Gson();
+        Bairro bairro = (Bairro) g.fromJson(content, Bairro.class);
+        BairroDAO edao = new BairroDAO();
+        return edao.inserir(bairro);
     }
+*/
 }

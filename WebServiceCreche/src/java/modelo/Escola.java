@@ -11,7 +11,7 @@ package modelo;
  */
 public class Escola {
     
-    private int cnpj;
+    private double cnpj;
     private String nome;
     private String rua;
     private int numero;
@@ -30,7 +30,7 @@ public class Escola {
         this.bairroId = bairroId;
     }
 
-    public int getCnpj() {
+    public double getCnpj() {
         return cnpj;
     }
 
