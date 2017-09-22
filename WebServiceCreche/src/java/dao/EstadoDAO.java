@@ -127,7 +127,7 @@ public class EstadoDAO {
     
     
     }
-    public Estado buscar(Estado estado)
+    public Estado buscar(int id)
     {
          String sql = "SELECT * FROM tbl_estado where estado_id=?";
         Estado retorno = null;
@@ -135,18 +135,16 @@ public class EstadoDAO {
         PreparedStatement pst = Conexao.getPreparedStatement(sql);
         try {
            
-            pst.setInt(1, estado.getId());
+            pst.setInt(1, id);
             ResultSet res = pst.executeQuery();
             
             if(res.next())
             {
                 retorno = new Estado();
-                retorno.setNome(res.getString("nome"));
-                retorno.setSigla(res.getString("sigla"));
-                
-                
-                
-                
+                retorno.setId(res.getInt("estado_id"));
+                retorno.setNome(res.getString("estado_nome"));
+                retorno.setSigla(res.getString("estado_sigla"));
+             
             }
                
             
