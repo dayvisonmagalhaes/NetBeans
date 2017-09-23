@@ -103,6 +103,55 @@ public class BairroDAO {
         
         return retorno;
     
+    }
+    
+    public boolean excluir(int id)
+    {
+        String sql = "DELETE FROM tbl_bairro where bairro_id=?";
+        Boolean retorno = false;
+        PreparedStatement pst = Conexao.getPreparedStatement(sql);
+        try {
+                   
+            pst.setInt(1, id);
+            if(pst.executeUpdate()>0)
+            {
+                retorno = true;
+            }
+                
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EstadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            retorno = false;
+        }
+        
+        return retorno;
+    
+    }
+    
+    public boolean atualizar(Bairro bairro)
+    {
+        String sql = "UPDATE tbl_bairro set bairro_nome=?,tbl_cidade_cidade_id=? where bairro_id=?";
+        Boolean retorno = false;
+        PreparedStatement pst = Conexao.getPreparedStatement(sql);
+        try {
+          
+            pst.setString(1, bairro.getNome());
+            pst.setInt(2, bairro.getCidadeId());
+            pst.setInt(3, bairro.getId());
+            
+            
+            if(pst.executeUpdate()>0)
+            {
+                retorno = true;
+            }
+         
+        } catch (SQLException ex) {
+            Logger.getLogger(EstadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            retorno = false;
+        }
+        
+        return retorno;
     
     }
 }
